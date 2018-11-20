@@ -2,6 +2,7 @@
 	include_once 'model/clsProduto.php';
 	include_once 'dao/clsConexao.php';
 	include_once 'dao/clsprodutoDAO.php';
+	$ttt = 0;
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +57,15 @@
 				echo "</tr>";
 			}
 		?>
+
+		<tr>
+			<td colspan="6"></td>
+			<td colspan="1"><?php foreach ($lista as $total) {
+				$t = $total->getPreco();
+				$p = $total->getQuantidade();
+				$ttt += $p * $t;
+			} echo "R$ " . $ttt;?></td>
+		</tr>
 
 	</table>
 
